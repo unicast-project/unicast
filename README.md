@@ -15,6 +15,7 @@ The wider the price range, the fewer fees you’ll accrue. But by providing liqu
 In a recent paper by the Bancor team there's evidence that the majority of the addresses providing liquidity in Uniswap v3 were not profitable. Although deploying positions in tight ranges can lead to higher returns it is at the expense of a higher risk of incurring more impermanent losses. In the paper, it is concluded that the impermanent losses (-$260.1M) exceed the returns LPs earned from trading fees ($199.3M).
 
 <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2412fed5-1177-482d-8707-ad48b915a1b5/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211203%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211203T115140Z&X-Amz-Expires=86400&X-Amz-Signature=bddbd2a375d9a47a7c275109a03b7332aa833f673448bf7d2ed49c668c47494e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject" width=60%>
+  
 Source: https://arxiv.org/pdf/2111.09192.pdf
 
 It seems that using trivial LP strategies or too active strategies will almost guarantee you to underperform. Liquidity provision on Uniswap v3 has become a game for professional LPs and experienced DeFi users that understand market-making.
@@ -26,6 +27,7 @@ With UniCast we aim to create the foundation for building AI-driven strategies t
 The first release of UniCast focuses on assessing the risk of the price to move completely outside a Uniswap v3 position. There's a live model (with a REST-API) available with with code, tutorial and instructions on the Github project page.
 
 <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b04cf8e0-ae80-4b2e-906c-3b6393558071/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211203%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211203T114951Z&X-Amz-Expires=86400&X-Amz-Signature=2470d1b40adbbc9f150b6224e0b76c9e3b898295414bba31476f512054a1fbea&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject" width=60%>
+  
 Source: https://github.com/unicast-project/unicast/blob/main/demo_python_endpoints.ipynb
 
 Going forward we are focusing on upgrading the hosting and secure long time (free) API access to both models, publish better instructions, tutorials and documentation for both the risk assessment and range optimizer model, and deploying smart contracts that serve predictions on-chain from the models. 
