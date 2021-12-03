@@ -74,11 +74,8 @@ res = json.loads(requests.post(url, headers = {'Content-type': 'application/json
 ```
 this will return a json with the result value.
 
-### About Scaleout and more info
+### More info
 
-Scaleout is building decentralized machine learning solutions. The Scaleout team is also a main contributor to the open source federated learning framework FEDn, and the resource manager STACKn.
-
-
-For project updates:
+For more project updates and to get in touch with the team, please use Twitter or interact with us directly here on GitHub:
 Twitter (https://twitter.com/0xUnicast)
 GitHub (https://github.com/unicast-project)
