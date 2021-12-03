@@ -14,6 +14,34 @@ For example, a user might set a target time frame of 30 days and a probability r
 
 In closing, the main point of UniCast is not to provide a great model (even if we think it will be useful), but to provide tools for the community to build any number of better or worse, private or public machine learning models for use in web3.
 
+### Test on a hosted endpoint
+The Docker image below has been deployed and is available for testing. It will return the expected risk of current price moving out of the position in the set timeframe. The upp er and lower bound are expressed as a fraction of the current price, e.g. upper_bound (in USD terms) / current_price (in USD terms) gives the upper fraction. Any asset id from Coingecko can be used. This endpoint is purely for testing purposes and comes with no accuracy, uptime or performance gurantees.
+
+```
+import pickle
+import requests
+import json
+import numpy as np
+
+def fraction(range_bound, current_price):
+    fraction = range_bound/current_price
+    return fraction
+
+
+url = 'http://165.227.232.84:8000/expected_timefraction'
+
+inp = {
+    "lower_bound": fraction(2276, 4553), 
+    "upper_bound": fraction(9106, 4553),
+    "time_horizon": 30,
+    "coingecko_kwargs": {'id': 'ethereum', 'vs_currency': 'usd', 'days': '100'}
+}
+
+res = requests.post(url, headers = {'Content-type': 'application/json'}, json=inp)
+print(res)
+f = (json.loads(res.json())['time_fraction'])
+print("Expected time fraction: ", np.round(f,3), " (chance of moving out of range in the time horizon: ", np.round(((1-np.round(f,3))*100),3), "%)")
+
 ### Docker Deployment tutorial
 Docker can be used to deploy Unicast and create an endpoint using fast-api.  
 In the project folder, build the Docker image with:
