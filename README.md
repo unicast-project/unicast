@@ -41,6 +41,7 @@ res = requests.post(url, headers = {'Content-type': 'application/json'}, json=in
 print(res)
 f = (json.loads(res.json())['time_fraction'])
 print("Expected time fraction: ", np.round(f,3), " (chance of moving out of range in the time horizon: ", np.round(((1-np.round(f,3))*100),3), "%)")
+```
 
 ### Docker Deployment tutorial
 Docker can be used to deploy Unicast and create an endpoint using fast-api.  
